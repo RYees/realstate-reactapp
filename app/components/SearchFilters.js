@@ -45,10 +45,10 @@ export default function SearchFilters() {
   }, [searchTerm]);
 
   return (
-    <Flex bg='purple.700' marginBottom='40PX' color='gray.900' p='4' justifyContent='center' flexWrap='wrap'>
+    <Flex bg='gray.100' opacity='0.9' marginBottom='40PX' color='black' p='4' justifyContent='center' flexWrap='wrap'>
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
-          <Select  onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' borderColor='yellow.200' >
+          <Select  onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' border='none' >
             {filter?.items?.map((item) => (
               <option value={item.value} key={item.value}>
                 {item.name}
@@ -58,7 +58,7 @@ export default function SearchFilters() {
         </Box>
       ))}
       <Flex flexDir='column'>
-        <Button color='blackAlpha.800' onClick={() => setShowLocations(!showLocations)} background='yellow.300' border='1px' borderColor='gray.200' marginTop='2' >
+        <Button color='black' onClick={() => setShowLocations(!showLocations)} background='yellow.300' border='1px' borderColor='gray.200' marginTop='2' >
           Search Location
         </Button>
         {showLocations && (
