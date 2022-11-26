@@ -19,17 +19,21 @@ const router = useRouter();
            onClick={() => setSearchFilters(!searchFilters)}
            cursor='pointer'
            marginTop='50px'
+           rounded='md' padding='3' 
+           marginLeft='8px'
+           boxShadow='md'
+           maxWidth='400px'
            marginBottom='78px'
-           borderBottom='1px'
-           borderColor='gray.200'
+           border='1px'
+           borderColor='gray.100'
            p='2'
            fontWeight='black'
            fontSize='lg'
            justifyContent='center'
            alignItems='center'
         >           
-             <Text bg='blue.900' color='white'>Search Property By Filters</Text>
-             <Icon color='white' paddingLeft='2' w='7' as={BsFilter} />
+             <Text color='gray.700'>Search Property By Filters</Text>
+             <Icon  paddingLeft='2' w='7' as={BsFilter} />
         </Flex>
         {searchFilters && <SearchFilters />}
         <Text fontSize='2xl' p='4' fontWeight='bold'>
