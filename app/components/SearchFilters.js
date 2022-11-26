@@ -45,10 +45,10 @@ export default function SearchFilters() {
   }, [searchTerm]);
 
   return (
-    <Flex bg='blue.500' marginBottom='40PX' color='white' p='4' justifyContent='center' flexWrap='wrap'>
+    <Flex bg='purple.700' marginBottom='40PX' color='gray.900' p='4' justifyContent='center' flexWrap='wrap'>
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
-          <Select onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' borderColor='yellow.200' >
+          <Select  onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' borderColor='yellow.200' >
             {filter?.items?.map((item) => (
               <option value={item.value} key={item.value}>
                 {item.name}
