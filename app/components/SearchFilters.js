@@ -45,7 +45,7 @@ export default function SearchFilters() {
   }, [searchTerm]);
 
   return (
-    <Flex bg='blue.500' color='white' p='4' justifyContent='center' flexWrap='wrap'>
+    <Flex bg='blue.500' marginBottom='40PX' color='white' p='4' justifyContent='center' flexWrap='wrap'>
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
           <Select onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' borderColor='yellow.200' >
@@ -58,7 +58,7 @@ export default function SearchFilters() {
         </Box>
       ))}
       <Flex flexDir='column'>
-        <Button color='blackAlpha.800' onClick={() => setShowLocations(!showLocations)} border='1px' borderColor='gray.200' marginTop='2' >
+        <Button color='blackAlpha.800' onClick={() => setShowLocations(!showLocations)} background='yellow.300' border='1px' borderColor='gray.200' marginTop='2' >
           Search Location
         </Button>
         {showLocations && (
