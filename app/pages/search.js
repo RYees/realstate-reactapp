@@ -18,7 +18,8 @@ const router = useRouter();
         <Flex
            onClick={() => setSearchFilters(!searchFilters)}
            cursor='pointer'
-           bg='green.800'
+           marginTop='50px'
+           marginBottom='78px'
            borderBottom='1px'
            borderColor='gray.200'
            p='2'
@@ -26,8 +27,8 @@ const router = useRouter();
            fontSize='lg'
            justifyContent='center'
            alignItems='center'
-        >
-             <Text color='white'>Search Property By Filters</Text>
+        >           
+             <Text bg='blue.900' color='white'>Search Property By Filters</Text>
              <Icon color='white' paddingLeft='2' w='7' as={BsFilter} />
         </Flex>
         {searchFilters && <SearchFilters />}

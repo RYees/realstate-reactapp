@@ -31,24 +31,24 @@ export default function SearchFilters() {
     router.push({ pathname: path, query: query });
   };
 
-  // useEffect(() => {
-  //   if (searchTerm !== '') {
-  //     const fetchData = async () => {
-  //       setLoading(true);
-  //       const data = await fetchApi(`${baseUrl}/auto-complete?query=${searchTerm}`);
-  //       setLoading(false);
-  //       setLocationData(data?.hits);
-  //     };
+  useEffect(() => {
+    if (searchTerm !== '') {
+      const fetchData = async () => {
+        setLoading(true);
+        const data = await fetchApi(`${baseUrl}/auto-complete?query=${searchTerm}`);
+        setLoading(false);
+        setLocationData(data?.hits);
+      };
 
-  //     fetchData();
-  //   }
-  // }, [searchTerm]);
+      fetchData();
+    }
+  }, [searchTerm]);
 
   return (
-    <Flex bg='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
+    <Flex bg='blue.500' color='white' p='4' justifyContent='center' flexWrap='wrap'>
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
-          <Select onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' >
+          <Select onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' borderColor='yellow.200' >
             {filter?.items?.map((item) => (
               <option value={item.value} key={item.value}>
                 {item.name}
@@ -57,14 +57,16 @@ export default function SearchFilters() {
           </Select>
         </Box>
       ))}
-      {/* <Flex flexDir='column'>
-        <Button onClick={() => setShowLocations(!showLocations)} border='1px' borderColor='gray.200' marginTop='2' >
+      <Flex flexDir='column'>
+        <Button color='blackAlpha.800' onClick={() => setShowLocations(!showLocations)} border='1px' borderColor='gray.200' marginTop='2' >
           Search Location
         </Button>
         {showLocations && (
           <Flex flexDir='column' pos='relative' paddingTop='2'>
             <Input
               placeholder='Type Here'
+              backgroundColor='blue.900'
+              borderColor='yellow.200'
               value={searchTerm}
               w='300px'
               focusBorderColor='gray.300'
@@ -110,7 +112,7 @@ export default function SearchFilters() {
             )}
           </Flex>
         )}
-      </Flex> */}
+      </Flex>
     </Flex>
   );
 }
